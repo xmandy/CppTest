@@ -1,5 +1,6 @@
 #include <iostream>
 #include <unordered_set>
+#include <vector>
 
 struct ObjectByPointer
 {
@@ -65,6 +66,24 @@ int main(int argc, char const *argv[])
     }
     
     std::cout << (mySet.find(&a) == mySet.end()) << "\n";
+
+    std::vector<int> a1{1, 2, 3};
+    std::vector<int> a2{5, 2, 3};
+
+    std::unordered_set<int> test;
+    test.insert(std::begin(a1), std::end(a1));
+    test.insert(std::begin(a2), std::end(a2));
+
+    for (auto& iter: test)
+    {
+        unsigned int a = 4;
+        std::cout << a * 8.3 << "\n";
+        std::cout << iter << "\n";
+    }
+
+    
+
+
     return 0;
 }
 
